@@ -12,19 +12,19 @@ pipeline {
    }
 
    stage('Style Checks') {
-    when {
-      anyof {
-       branch 'main'
-       tag "*"
-       }
-    }
+     when {
+       anyof {
+         branch 'main'
+         tag "*"
+        }
+     }
     steps{
       echo 'code Quality'
       }
     }
 
     stage('Unit Tests'){
-    when {
+      when {
           anyof {
            branch 'main'
            tag "*"
