@@ -13,7 +13,7 @@ pipeline {
 
    stage('Style Checks') {
     when {
-       branch 'master'
+       branch 'main'
     }
     steps{
       echo 'code Quality'
@@ -22,7 +22,7 @@ pipeline {
 
     stage('Unit Tests'){
     when {
-           branch 'master'
+           branch 'main'
     }
      steps{
        echo 'code Quality'
