@@ -38,7 +38,7 @@ pipeline {
     stage('Download Dependencies') {
      when { tag "*" }
       steps {
-        echo 'Download Dependenciess'
+        echo 'Download Dependencies'
         }
         }
 
