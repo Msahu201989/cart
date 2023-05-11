@@ -23,18 +23,21 @@ pipeline {
       }
 
       stage ('Download dependencies') {
+        when { tag "*" }
         steps {
          echo 'Download Dependencies'
         }
       }
 
        stage ('Prepare Artifact') {
+        when { tag "*" }
          steps {
           echo 'Prepare Artifact'
          }
        }
 
          stage ('Publish Artifact') {
+           when { tag "*" }
            steps {
             echo 'Publish Artifact'
            }
