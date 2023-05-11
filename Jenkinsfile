@@ -1,3 +1,66 @@
-@Library('roboshop') _
+pipeline {
 
-nodejs()
+ agent any
+
+ stages {
+
+  stage ('code quality') {
+    steps {
+     echo 'code quality'
+    }
+  }
+
+    stage ('Style checks') {
+     when {
+        branch 'master'
+        }
+      steps {
+       echo 'style checks'
+      }
+    }
+
+      stage ('unit Tests') {
+           when {
+              branch 'master'
+              }
+        steps {
+         echo 'Unit Test'
+        }
+      }
+
+      stage ('Download dependencies') {
+        when { tag "*" }
+        steps {
+         echo 'Download Dependencies'
+        }
+      }
+
+       stage ('Prepare Artifact') {
+        when { tag "*" }
+         steps {
+          echo 'Prepare Artifact'
+         }
+       }
+
+         stage ('Publish Artifact') {
+           when { tag "*" }
+           steps {
+            echo 'Publish Artifact'
+           }
+         }
+ }
+ }
+
+
+
+
+
+
+
+
+
+
+// @Library('roboshop') _
+//
+// env.COMPONENT="cart"
+// nodejs()
