@@ -28,7 +28,7 @@ pipeline {
         }
       }
 
-       stage ('Prepare Artifact) {
+       stage ('Prepare Artifact') {
          steps {
           echo 'Prepare Artifact'
          }
