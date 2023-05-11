@@ -37,7 +37,7 @@ pipeline {
        }
 
          stage ('Publish Artifact') {
-           when { tag "*" }
+           when { tag "1.0.0" }
            steps {
             echo 'Publish Artifact'
            }
