@@ -1,4 +1,4 @@
-@Library('july-roboshop') _
+@Library('julyroboshop') _
 
 
 nodejs()
