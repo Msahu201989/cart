@@ -31,7 +31,9 @@ pipeline {
       }
 
       stage ('Download dependencies') {
-        when { tag "*" }
+        when {
+            branch 'demo'
+            }
         steps {
          echo 'Download Dependencies'
         }
