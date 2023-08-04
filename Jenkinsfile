@@ -13,10 +13,10 @@ pipeline {
   }
 
     stage ('Style checks') {
-     when {
-        branch 'demo'
-        }
-      steps {
+
+        when { tag "*" }
+
+          steps {
        echo 'style checks'
       }
     }
