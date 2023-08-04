@@ -26,6 +26,18 @@ pipeline {
           echo 'Download Dependencies'
        }
     }
+    stage('Prepare Artifacts') {
+       steps {
+          echo 'prepare artifacts'
+       }
+    }
+    stage('Publish Artifacts ') {
+       steps {
+          echo 'Publish Artifacts'
+       }
+    }
   }
+
+
 
 }
