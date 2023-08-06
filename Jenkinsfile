@@ -2,6 +2,6 @@
 //
 // nodejs()
 
-@Library('augustroboshop') _
+@Library('roboshop') _
 
 nodejs()
