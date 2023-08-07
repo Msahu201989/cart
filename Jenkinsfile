@@ -1,3 +1,3 @@
-@library('augustroboshop') _
+@Library('augustroboshop') _
 
 nodejs()
