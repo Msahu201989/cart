@@ -9,7 +9,7 @@ pipeline {
 
   stages {
 
-   stage('code Quality') {
+   stage('codes Quality') {
     steps {
       echo 'code Quality'
       sh 'env'
