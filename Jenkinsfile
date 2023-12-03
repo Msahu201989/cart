@@ -18,7 +18,12 @@ pipeline {
    }
 
    stage('Style Checks') {
-    when { branch 'main' }
+    when {
+       anyof {
+        branch 'main'
+         tag "*"
+       }
+       }
        steps {
          echo 'code Quality'
 
@@ -26,12 +31,12 @@ pipeline {
       }
 
       stage('Unit Test') {
-      when { branch 'main' }
-          steps {
-            echo 'code Quality'
-
-          }
-         }
+    when {
+       anyof {
+        branch 'main'
+         tag "*"
+       }
+       }
 
      stage('Download Dependencies') {
       when { tag "*"}
