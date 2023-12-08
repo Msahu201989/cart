@@ -5,64 +5,48 @@
 
 pipeline {
 
- agent any
+  agent {
+    node 'Workstation'
+    }
 
   stages {
 
-   stage('codes Quality') {
-    steps {
-      echo 'code Quality'
-      sh 'env'
-
-    }
-   }
-
-   stage('Style Checks') {
-    when {
-       anyof {
-        branch 'main'
-         tag "*"
-       }
-       }
-       steps {
-         echo 'code Quality'
-
-       }
+    stage('Code Quality') {
+      steps {
+        echo 'Code Quality'
       }
+    }
 
-      stage('Unit Test') {
-    when {
-       anyof {
-        branch 'main'
-         tag "*"
-       }
-       }
+    stage('Style Checks') {
+//     when {
+//       branch 'main'
+//       }
 
-     stage('Download Dependencies') {
-      when { tag "*"}
-        steps {
-         echo 'Download Dependencies'
+      steps {
+        echo 'Code Quality'
+      }
+    }
 
-           }
-           }
+    stage('Unit Tests') {
+      steps {
+        echo 'Unit tests'
+      }
+    }
 
+    stage('Download Dependencies') {
+         steps {
+        echo 'Download Dependencies'
+      }
+    }
 
-     stage('Prepare Artifacts') {
-      when { tag "*"}
-        steps {
-         echo 'Prepare Artifacts'
+    stage('Prepare Artifact') {
+      steps {
+        echo 'Prepare Artifact'
+      }
+    }
 
-           }
-           }
-
-        stage('Publish Artifacts') {
-         when { tag "*"}
-           steps {
-            echo 'Publish Artifacts'
-
-              }
-              }
-
-  }
-}
-}
+    stage('Publish Artifact') {
+      steps {
+        echo 'Publish Artifact'
+      }
+    }
