@@ -18,10 +18,6 @@ pipeline {
     }
 
     stage('Style Checks') {
-//     when {
-//       branch 'main'
-//       }
-
       steps {
         echo 'Code Quality'
       }
@@ -50,3 +46,4 @@ pipeline {
         echo 'Publish Artifact'
       }
     }
+}
