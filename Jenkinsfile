@@ -1,50 +1,9 @@
+@Library('roboshop')
+nodejs()
+
+
 //@Library('augustroboshop') _
 
 //env.COMPONENT="cart"   //this is project key for Sonar
 //nodejs()
 
-pipeline {
-
-  agent {
-    node 'Workstation'
-    }
-
-  stages {
-
-    stage('Code Quality') {
-      steps {
-        echo 'Code Quality'
-      }
-    }
-
-    stage('Style Checks') {
-      steps {
-        echo 'Code Quality'
-      }
-    }
-
-    stage('Unit Tests') {
-      steps {
-        echo 'Unit tests'
-      }
-    }
-
-    stage('Download Dependencies') {
-         steps {
-        echo 'Download Dependencies'
-      }
-    }
-
-    stage('Prepare Artifact') {
-      steps {
-        echo 'Prepare Artifact'
-      }
-    }
-
-    stage('Publish Artifact') {
-      steps {
-        echo 'Publish Artifact'
-      }
-    }
-    }
-    }
