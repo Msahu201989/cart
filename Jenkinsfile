@@ -1,5 +1,6 @@
 @Library('roboshop2024') _
 
+env.COMPONENT="cart"
 nodejs()
 
 
